@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
- name: nginx
+ name: grafana
  namespace: argocd
 spec:
   destination:
-    namespace: nginx
+    namespace: grafana
     server: 'https://kubernetes.default.svc'
   source:
-    path: subchart/nginx
+    path: subchart/grafana
     repoURL: https://github.com/projectlemontwist/argocdtest.git
     targetRevision: HEAD
   project: default
